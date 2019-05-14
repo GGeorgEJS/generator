@@ -6,10 +6,13 @@ def new():
     list_p = []
     while True:
         if not res:
-                try:
-                        res += "{} {}".format(dict_["names"][random.randint(0, len(dict_["names"]))], dict_["lasts"][random.randint(0, len(dict_["lasts"]))])
-                except  IndexError:
-                        continue 
+                # try:
+                res += "{} {}".format(
+                        dict_["names"][random.randint(0, len(dict_["names"])-1)],
+                        dict_["lasts"][random.randint(0, len(dict_["lasts"])-1)]
+                )
+                # except  IndexError:
+                #         continue 
         if res not in list_p:
                 print(res)
                 like = input("Do you like it?\n")
@@ -25,6 +28,21 @@ def new():
         else:
                 res = ''
                 continue
+
+# def only_nick():
+#         dict_ = get_nicks()
+#         res = ''
+#         list_p = []
+#         while True:
+#                 if not res:
+#                         try:
+#                                 res += f'{name}'
+#                         except IndexError:
+#                                 continue
+#                 if res not in list_p:
+                          
+
+        
 
 def add():
         new_nick = input("New nick -> ")
